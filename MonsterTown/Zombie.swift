@@ -8,8 +8,8 @@
 import Foundation
 
 class Zombie: Monster {
-    var walksWithLimp = true
-    private(set) var isFallingApart = false
+    var walkWithLimp: Bool
+    private var isFallingApart: Bool
     
     override class var spookyNoise: String {
         return "Brains..."
@@ -21,4 +21,12 @@ class Zombie: Monster {
         town?.changePopulation(by: -10)
         super.terrorizeTown()
     }
+    
+    
+    init(walkWithLimp: Bool = true, isFallingAprt: Bool = true, town: Town?, name: String){
+        self.walkWithLimp = walkWithLimp
+        self.isFallingApart = isFallingAprt
+        super.init(town: town, name: name)
+    }
+    
 }

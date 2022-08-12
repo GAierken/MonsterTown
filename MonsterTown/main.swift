@@ -7,7 +7,7 @@
 
 import Foundation
 
-private var myTown = Town()
+private var myTown = Town(population: 6000, numberOfSpotLights: 20)
 myTown.changePopulation(by: 500)
 print(myTown.townSize)
 //myTown.printDescription()
