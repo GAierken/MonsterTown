@@ -8,8 +8,34 @@
 import Foundation
 
 struct Town {
-    var population = 5422
+    static let world = "Galaxy"
+    let region = "Middle"
+    var population = 5422 {
+        didSet(oldPopulation) {
+            if population < oldPopulation {
+                print("the population changes to \(population) from \(oldPopulation)")
+            }
+            
+        }
+    }
     var numberOfStoplights = 4
+    
+    enum Size {
+        case small
+        case medium
+        case large
+    }
+    
+    lazy var townSize: Size = {
+        switch population {
+        case 0...10000:
+            return Size.small
+        case 10001...100000:
+            return Size.medium
+        default:
+            return Size.large
+        }
+    }()
     
     func printDescription() {
         print("population: \(population) stoplights: \(numberOfStoplights)")

@@ -7,8 +7,9 @@
 
 import Foundation
 
-var myTown = Town()
+private var myTown = Town()
 myTown.changePopulation(by: 500)
+print(myTown.townSize)
 //myTown.printDescription()
 //
 //let genericMonster = Monster()
@@ -19,3 +20,8 @@ let fredTheZombie = Zombie()
 fredTheZombie.town = myTown
 fredTheZombie.terrorizeTown()
 fredTheZombie.town?.printDescription()
+print("Victim pool: \(fredTheZombie.victimPool)")
+print(Zombie.spookyNoise)
+if Zombie.isTerrifying {
+    print("Run away")
+}
